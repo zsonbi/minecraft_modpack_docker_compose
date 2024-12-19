@@ -1,0 +1,1 @@
+In this folder you can copy the entire server which you downloaded from curse forge or other platform, just make sure that the mods, configs etc. are in this folder to work properly
