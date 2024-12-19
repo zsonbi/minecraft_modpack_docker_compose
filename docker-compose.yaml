@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    container_name: minecraft_server
+    ports:
+      - "30000:25565"
+    environment:
+      EULA: "TRUE"                 # Accept the Minecraft EULA
+      VERSION: "1.20.1"            # Specify the Minecraft version (e.g., 1.20.1)
+      TYPE: "FORGE"                # Specify the modding platform (e.g., FORGE, FABRIC, VANILLA)
+      FORGEVERSION: "47.3.7"       # Optional, specify Forge version
+      MEMORY: "4G"                 # Set the memory allocation (e.g., 4G for 4GB)
+    volumes:
+      - ./server:/data      # Persistent storage for world data, config, mods, etc.
+    stdin_open: true
+    tty: true
+
+# Optional: Automatically restart the server if it crashes
+    restart: unless-stopped
+
+# To add mods, place them in the ./minecraft-data/mods directory after running the server once.
+# Ensure Java is compatible with your Minecraft/Forge version.
