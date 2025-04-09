@@ -8,10 +8,16 @@ services:
       - "30000:25565"
     environment:
       EULA: "TRUE"                 # Accept the Minecraft EULA
-      VERSION: "1.20.1"            # Specify the Minecraft version (e.g., 1.20.1)
-      TYPE: "FORGE"                # Specify the modding platform (e.g., FORGE, FABRIC, VANILLA)
-      FORGEVERSION: "47.3.7"       # Optional, specify Forge version
-      MEMORY: "4G"                 # Set the memory allocation (e.g., 4G for 4GB)
+      VERSION: ${VERSION}            # Specify the Minecraft version (e.g., 1.20.1)
+      TYPE: ${TYPE}                # Specify the modding platform (e.g., FORGE, FABRIC, VANILLA)
+      FORGEVERSION: ${FORGEVERSION}       # Optional, specify Forge version
+      MEMORY: ${MEMORY}                 # Set the memory allocation (e.g., 4G for 4GB)
+      MAX_PLAYERS: ${MAX_PLAYERS}
+      VIEW_DISTANCE: ${VIEW_DISTANCE}
+      ONLINE_MODE: ${ONLINE_MODE}
+      ALLOW_FLIGHT: ${ALLOW_FLIGHT}
+      SERVER_NAME: ${SERVER_NAME}
+      FABRIC_LOADER_VERSION: ${FABRIC_LOADER_VERSION}
     volumes:
       - ./server:/data      # Persistent storage for world data, config, mods, etc.
     stdin_open: true
