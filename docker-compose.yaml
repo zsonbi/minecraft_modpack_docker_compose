@@ -18,6 +18,7 @@ services:
       ALLOW_FLIGHT: ${ALLOW_FLIGHT}
       SERVER_NAME: ${SERVER_NAME}
       FABRIC_LOADER_VERSION: ${FABRIC_LOADER_VERSION}
+      JAVA_VERSION: ${JAVA_VERSION}
     volumes:
       - ./server:/data      # Persistent storage for world data, config, mods, etc.
     stdin_open: true
